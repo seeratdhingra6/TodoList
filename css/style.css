@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#body-box {
+  background-color: #5c5fe6;
+
+  height: 602px;
+  width: 799px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#to-do-box {
+  background-color: white;
+
+  height: 492px;
+  width: 478px;
+}
+.upper-bar {
+  border-bottom: 1px solid grey;
+  display: flex;
+  height: 128px;
+  width: 478px;
+  position: relative;
+  justify-content: baseline;
+  align-items: center;
+  padding: 15px;
+}
+.day {
+  position: absolute;
+  left: 17px;
+  top: 39px;
+  color:#5c5fe6;
+}
+.coma {
+  position: absolute;
+  left: 67px;
+  top: 39px;
+  color:#5c5fe6;
+}
+.date {
+  position: absolute;
+  left: 85px;
+  top: 39px;
+  color:#5c5fe6;
+}
+.month {
+  position: absolute;
+  bottom: 32px;
+}
+.tasks {
+  position: absolute;
+  top: 41px;
+  right: 15px;
+}
+#item {
+  width: 70%;
+  padding: 10px;
+  margin-top: 20px;
+  position: absolute;
+  top: 87px;
+  left: 15px;
+}
+button {
+  border-radius: 25px;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  font-weight: 300;
+  position: absolute;
+  top: 108px;
+  right: 15px;
+}
+#greet {
+}
+.listitem {
+  list-style: none;
+  margin-top: 20px;
+  padding: 15px;
+  border-bottom: 2px solid black;
+}
+.listitem li {
+  border-bottom: 10px;
+}
