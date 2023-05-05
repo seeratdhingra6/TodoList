@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
-</head>
-<body>
-
-  <main>
-  <div id="body-box">
-    <div id="to-do-box">
-      <div class="upper-bar">
-        
-        <h2 class="day">day</h2>
-      <h2 class="coma">,</h2>
-      <h2 class="date">date</h2>
-    
-      <h5 class="month">month</h5>
-      <h5 class="tasks">tasks</h5>
-      <button onclick="addToDo()">
-        <span>&#43;</span></button>
-        <input type="textarea" id="item" placeholder="write something here" autofocus/>
-    </div>
-    <div id="greet">
-      <ul class="listitem">
-      </ul>
-    </div>
-    </div>
-  </div>
-</main>
-<script src="index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <!-- Nilla ka-dabba -->
+      <div id="body-box">
+        <!-- Safed ka-dabba -->
+        <div id="to-do-box">
+          <!-- Upar wali patti of todo list -->
+          <div class="upper-bar">
+            <!-- date and time bhiya ka ilaka -->
+            <div class="upperbar-flex">
+              <div class="day-date">
+                <h2 class="day">day</h2>
+                <h2 class="date">date</h2>
+              </div>
+              <div class="task-tasks">
+                <h5 class="tasks">tasks</h5>
+              </div>
+            </div>
+            <h5 class="month">month</h5>
+            <!-- input baba ka ilaka -->
+            <div class="inputArea">
+              <button id="btn" onclick="addToDo()">
+                <span>&#43;</span>
+              </button>
+              <input
+                type="textarea"
+                id="item"
+                placeholder="write something here"
+                autofocus
+              />
+            </div>
+          </div>
+          <div id="lowerArea">
+            <ul class="listitem"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
