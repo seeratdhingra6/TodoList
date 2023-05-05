@@ -11,21 +11,21 @@ main {
 }
 #body-box {
   background-color: #5c5fe6;
-/* hello */
+  /* hello */
   height: 602px;
   width: 799px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 #to-do-box {
   background-color: white;
-
-  height: 492px;
+  margin-top:74px;
+  height: 528px;
   width: 478px;
 }
 .upper-bar {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.193);
   display: flex;
   height: 128px;
   width: 478px;
@@ -34,32 +34,32 @@ main {
   align-items: center;
   padding: 15px;
 }
-.day {
-  position: absolute;
-  left: 17px;
-  top: 39px;
-  color:#5c5fe6;
+.upperbar-flex{
+  display:flex;
+  /* position: relative; */
+  justify-content: space-between;
+  align-items: center;
+  width: 478px;
 }
-.coma {
-  position: absolute;
-  left: 67px;
-  top: 39px;
-  color:#5c5fe6;
+.day-date{
+  display: flex;
+  /* order: 1; */
+}
+.task-tasks{
+  display: flex;
+  /* order: 2; */
+}
+.day {
+  color: #5c5fe6;
 }
 .date {
-  position: absolute;
-  left: 85px;
-  top: 39px;
-  color:#5c5fe6;
+  color: #5c5fe6;
 }
+.tasks {
+  }
 .month {
   position: absolute;
   bottom: 32px;
-}
-.tasks {
-  position: absolute;
-  top: 41px;
-  right: 15px;
 }
 #item {
   width: 70%;
@@ -68,25 +68,66 @@ main {
   position: absolute;
   top: 87px;
   left: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.193);;
 }
-button {
+#btn {
   border-radius: 25px;
   width: 40px;
   height: 40px;
   font-size: 25px;
   font-weight: 300;
+  border: none;
   position: absolute;
   top: 108px;
   right: 15px;
+  background-color: #f5696a;
+  color: white;
 }
-#greet {
+.removeButton {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: white;
+  border: none;
 }
 .listitem {
   list-style: none;
   margin-top: 20px;
-  padding: 15px;
-  border-bottom: 2px solid black;
+  /* padding: 15px; */
+  /* border-bottom: 2px solid black; */
 }
-.listitem li {
+/* .listitem li {
   border-bottom: 10px;
+} */
+.toDo {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.193);
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  position: relative;
+  padding-right: 35px;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  /* overflow-y: hidden; */
+  
+
+}
+.itemName {
+  width: 400px;
+  word-wrap: break-word;
+}
+
+#lowerArea {
+  display: flex;
+  overflow: auto;
+  height: 374px;
+  margin-top: 27px;
+}
+.inputArea{
+  display: flex;
 }
