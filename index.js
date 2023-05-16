@@ -1,14 +1,19 @@
 let listItem = document.getElementsByClassName("listitem")[0];
 let toDoList = [];
+let counter=0;
 /**
  * @description this function will add todo's
  */
 function addToDo() {
   let toDo = document.getElementById("item").value;
-  toDoList.push(toDo);
+  const toDoObj={
+  id: counter,
+  toDo
+  };
+  toDoList.push(toDoObj);
+  counter+=1;
   renderToDo();
 }
-
 /**
  *
  * @param {string} discardValue

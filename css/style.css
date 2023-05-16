@@ -16,7 +16,6 @@ main {
   width: 799px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 #to-do-box {
   background-color: white;
@@ -55,8 +54,6 @@ main {
 .date {
   color: #5c5fe6;
 }
-.tasks {
-  }
 .month {
   position: absolute;
   bottom: 32px;
@@ -95,12 +92,7 @@ main {
 .listitem {
   list-style: none;
   margin-top: 20px;
-  /* padding: 15px; */
-  /* border-bottom: 2px solid black; */
 }
-/* .listitem li {
-  border-bottom: 10px;
-} */
 .toDo {
   border-bottom: 1px solid rgba(128, 128, 128, 0.193);
   padding: 5px;
@@ -113,20 +105,16 @@ main {
   align-items: center;
   justify-content: center;
   height: 30px;
-  /* overflow-y: hidden; */
-  
-
 }
 .itemName {
   width: 400px;
   word-wrap: break-word;
 }
-
 #lowerArea {
   display: flex;
   overflow: auto;
   height: 374px;
-  margin-top: 27px;
+  margin-top: 27px
 }
 .inputArea{
   display: flex;
