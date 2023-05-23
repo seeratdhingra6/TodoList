@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Merriweather", serif;
 }
 main {
   display: flex;
@@ -11,7 +12,6 @@ main {
 }
 #body-box {
   background-color: #5c5fe6;
-  /* hello */
   height: 602px;
   width: 799px;
   display: flex;
@@ -19,7 +19,7 @@ main {
 }
 #to-do-box {
   background-color: white;
-  margin-top:74px;
+  margin-top: 74px;
   height: 528px;
   width: 478px;
 }
@@ -33,23 +33,21 @@ main {
   align-items: center;
   padding: 15px;
 }
-.upperbar-flex{
-  display:flex;
-  /* position: relative; */
+.upperbar-flex {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 478px;
 }
-.day-date{
+.day-date {
   display: flex;
-  /* order: 1; */
 }
-.task-tasks{
+.task-tasks {
   display: flex;
-  /* order: 2; */
 }
 .day {
   color: #5c5fe6;
+  text-transform: capitalize;
 }
 .date {
   color: #5c5fe6;
@@ -57,6 +55,7 @@ main {
 .month {
   position: absolute;
   bottom: 32px;
+  text-transform: capitalize;
 }
 #item {
   width: 70%;
@@ -65,7 +64,7 @@ main {
   position: absolute;
   top: 87px;
   left: 15px;
-  border: 1px solid rgba(128, 128, 128, 0.193);;
+  border: 1px solid rgba(128, 128, 128, 0.193);
 }
 #btn {
   border-radius: 25px;
@@ -89,10 +88,6 @@ main {
   background: white;
   border: none;
 }
-.listitem {
-  list-style: none;
-  margin-top: 20px;
-}
 .toDo {
   border-bottom: 1px solid rgba(128, 128, 128, 0.193);
   padding: 5px;
@@ -100,7 +95,7 @@ main {
   display: flex;
   position: relative;
   padding-right: 35px;
-  max-width: 440px;
+  max-width: 446px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,13 +104,86 @@ main {
 .itemName {
   width: 400px;
   word-wrap: break-word;
+
+  margin-left: 11px;
 }
 #lowerArea {
   display: flex;
   overflow: auto;
   height: 374px;
-  margin-top: 27px
+  margin-top: 27px;
+  flex-direction: column;
 }
-.inputArea{
+.listitem {
+  list-style: none;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.inputArea {
   display: flex;
+}
+#item:focus {
+  outline: 1px solid #f5696a;
+}
+#btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 28px;
+}
+#checkedItem:checked + .itemName {
+  text-decoration: line-through;
+  color: rgba(128, 128, 128, 0.605);
+}
+.lengthLimit {
+  color: #f5696a;
+  font-size: 8px;
+  width: 191px;
+}
+#btn:disabled {
+  background-color: rgb(198, 184, 184);
+}
+@media screen and (max-width: 575px) {
+  #body-box {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  #to-do-box {
+    margin-top: 19px;
+    height: 94vh;
+    width: 90vw;
+  }
+  .upper-bar {
+    height: 130px;
+    width: auto;
+    padding-top: 40px;
+  }
+  .upperbar-flex {
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+  }
+  .day,
+  .date {
+    font-size: 18px;
+  }
+  .month {
+    position: absolute;
+    bottom: 40px;
+  }
+  #lowerArea {
+    height: auto;
+    margin-top: 27px;
+    flex-direction: column;
+    width: 330px;
+  }
+  .listitem {
+    font-size: 12px;
+  }
+  .removeButton {
+    right: 6px;
+    width: 15px;
+    height: 15px;
+  }
 }

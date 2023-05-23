@@ -5,28 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
     <main>
-      <!-- Nilla ka-dabba -->
       <div id="body-box">
-        <!-- Safed ka-dabba -->
         <div id="to-do-box">
-          <!-- Upar wali patti of todo list -->
           <div class="upper-bar">
-            <!-- date and time bhiya ka ilaka -->
             <div class="upperbar-flex">
               <div class="day-date">
                 <h2 class="day">day</h2>
                 <h2 class="date">date</h2>
               </div>
               <div class="task-tasks">
-                <h5 class="tasks">tasks</h5>
+                <h5 class="tasks">Tasks</h5>
               </div>
             </div>
             <h5 class="month">month</h5>
-            <!-- input baba ka ilaka -->
+
             <div class="inputArea">
               <button id="btn" onclick="addToDo()">
                 <span>&#43;</span>
@@ -34,12 +33,14 @@
               <input
                 type="textarea"
                 id="item"
+                oninput="lengthLimitAlert(event)"
                 placeholder="write something here"
                 autofocus
               />
             </div>
           </div>
           <div id="lowerArea">
+            <p class="lengthLimit" ></p>
             <ul class="listitem"></ul>
           </div>
         </div>

@@ -1,36 +1,64 @@
 let listItem = document.getElementsByClassName("listitem")[0];
+
 let toDoList = [];
-let counter=0;
+let counter = 0;
+const isMobileDevice = window.innerWidth <= 575;
+let maxLimit = isMobileDevice ? 30 : 40;
+
+/**
+ *
+ * @description this function alerts user for lengthlimit of todo.
+ */
+function lengthLimitAlert(event) {
+  if (event.target.value.length >= maxLimit) {
+    document.getElementsByClassName("lengthLimit")[0].innerHTML =
+      "<p>* cannot save entity.length limit exceeded!</p>";
+    document.getElementById("btn").disabled = true;
+  } else {
+    document.getElementsByClassName("lengthLimit")[0].innerHTML = "";
+    document.getElementById("btn").disabled = false;
+  }
+}
+
 /**
  * @description this function will add todo's
  */
 function addToDo() {
   let toDo = document.getElementById("item").value;
-  const toDoObj={
-  id: counter,
-  toDo
-  };
-  toDoList.push(toDoObj);
-  counter+=1;
-  renderToDo();
+  if (toDo != "") {
+    const toDoObj = {
+      id: counter,
+      toDo,
+    };
+    toDoList.push(toDoObj);
+    counter += 1;
+    renderToDo();
+  }
 }
+
 /**
  *
  * @param {string} discardValue
  * @description this function will remove todo's
  */
 function removeTodo(discardValue) {
-  toDoList = toDoList.filter((item) => item !== discardValue);
+  toDoList = toDoList.filter((item) => item.id !== discardValue);
   renderToDo();
 }
+/**
+ * @description this function renders todo
+ */
 function createToDoNode() {
   let finalResult = "";
   toDoList.forEach((item) => {
-    finalResult += `<li class="toDo"><span class="itemName">${item}</span><button class="removeButton" onclick="removeTodo('${item}')">
+    finalResult += `<li class="toDo"><input id="checkedItem" type="checkbox"/><span class="itemName">${item.toDo}</span><button class="removeButton" onclick="removeTodo(${item.id})">
     <span>&#9587</span></button></li>`;
   });
   listItem.innerHTML = finalResult;
 }
+/**
+ * @description this function will tell the number of tasks.
+ */
 function setPreceeder() {
   let arr = toDoList.length;
   let preceeder = "tasks";
@@ -40,14 +68,14 @@ function setPreceeder() {
 
   document.getElementsByClassName("tasks")[0].innerHTML = `${arr} ${preceeder}`;
 }
+
 function renderToDo() {
   createToDoNode();
   setPreceeder();
 }
+
 let now = new Date();
-console.log(now);
 let day = now.getDay();
-console.log(day);
 function getWeekName(day) {
   switch (day) {
     case 0:
@@ -80,10 +108,8 @@ function getWeekName(day) {
 getWeekName(day);
 document.getElementsByClassName("day")[0].innerHTML = getWeekName(day);
 let date = now.getDate();
-console.log(date);
 document.getElementsByClassName("date")[0].innerHTML = date;
 let month = now.getMonth();
-console.log(month);
 let monthNames = [
   "january",
   "february",
